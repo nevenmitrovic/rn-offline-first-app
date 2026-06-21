@@ -1,7 +1,4 @@
-import { CText } from '@/src/components/elements/Text';
+import Tasks from '@/src/screens/tasks/Tasks';
 
-const IndexPage = () => {
-  return <CText>Welcome to the app! This is the index page.</CText>;
-};
-
+const IndexPage = () => <Tasks />;
 export default IndexPage;

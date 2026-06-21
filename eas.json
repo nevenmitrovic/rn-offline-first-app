@@ -1,0 +1,44 @@
+{
+  "cli": {
+    "version": ">= 10.2.3",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "env": {
+        "EXPO_PUBLIC_ENV": "DEV",
+        "EXPO_PUBLIC_API_URL": "http://192.168.1.9:3001"
+      },
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "env": {
+        "EXPO_PUBLIC_ENV": "DEV",
+        "EXPO_PUBLIC_API_URL": "http://192.168.1.9:3001"
+      },
+      "distribution": "internal"
+    },
+    "test-store": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_ENV": "DEV",
+        "EXPO_PUBLIC_API_URL": "http://192.168.1.9:3001"
+      }
+    },
+    "prod-apk": {
+      "env": {
+        "EXPO_PUBLIC_ENV": "PROD",
+        "EXPO_PUBLIC_API_URL": "http://192.168.1.9:3001"
+      },
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_ENV": "PROD",
+        "EXPO_PUBLIC_API_URL": "http://192.168.1.9:3001"
+      }
+    }
+  }
+}
