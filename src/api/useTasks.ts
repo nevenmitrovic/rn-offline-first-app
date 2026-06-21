@@ -7,5 +7,5 @@ export const useGetTasks = () =>
     queryKey: ['tasks'],
     placeholderData: keepPreviousData,
     initialData: [],
-    queryFn: () => axiosInstance.get('/tasks'),
+    queryFn: () => axiosInstance.get('/tasks').then(res => res.data),
   });

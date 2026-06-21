@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { useGetTasks } from '@/src/api/useTasks';
 import { Loader } from '@/src/components/elements/Loader';
 import { themeColor } from '@/src/styles/theme';
@@ -7,8 +8,10 @@ import { CText } from '../../components/elements/Text';
 import { cs } from '../../styles/commonStyles';
 import { spacing } from '../../styles/spacing';
 
-const Tasks = () => {
+const Tasks: FC = () => {
   const { data, isLoading, isFetching } = useGetTasks();
+
+  console.log('Tasks data:', data);
 
   return (
     <Loader isLoading={isLoading || isFetching}>
@@ -19,7 +22,7 @@ const Tasks = () => {
             <View key={task.id} style={styles.taskItem}>
               <View style={spacing.gap8}>
                 <CText type="listItemTitle">{task.title}</CText>
-                <View style={cs.row}>
+                <View style={spacing.gap4}>
                   <CText type="desc">
                     Kreirano: {dayjs(task.createdAt).format('DD.MM.YYYY')}
                   </CText>
@@ -52,8 +55,10 @@ const styles = StyleSheet.create({
     ...spacing.gap16,
   },
   taskItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 12,
-    marginBottom: 8,
     backgroundColor: '#f0f0f0',
     borderRadius: 4,
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
